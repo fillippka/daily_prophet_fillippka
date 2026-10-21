@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сириус Блэк замечен | Ежедневный Пророк</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=PT+Serif:ital@0;1&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+        <style>
+        /* Картинка без увеличения */
+        .static-img {
+            width: 100%; height: auto; display: block; margin-bottom: 20px;
+            filter: grayscale(100%); transition: filter 0.4s; cursor: default;
+        }
+        .static-img:hover { filter: grayscale(0%); }
+
+        /* Принудительно убираем буквицу у ВСЕХ абзацев */
+        .article-text p::first-letter {
+            float: none !important;
+            font-size: inherit !important;
+            line-height: inherit !important;
+            padding: 0 !important;
+            font-family: inherit !important;
+            color: inherit !important;
+            text-shadow: none !important;
+        }
+
+        /* Включаем буквицу ТОЛЬКО для первого абзаца (через класс) */
+        .article-text p.first-para::first-letter {
+            float: left !important;
+            font-size: 5rem !important;
+            line-height: 0.8 !important;
+            padding-right: 8px !important;
+            padding-top: 4px !important;
+            font-family: 'UnifrakturMaguntia', 'Playfair Display', serif !important;
+            color: #1a1a1a !important;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="zoom-clone-layer"></div>
+    <div class="newspaper" id="main-newspaper">
+        <header>
+            <div class="title-container">
+                <svg class="hand-svg left-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
+                <a href="index.html" style="text-decoration: none; color: inherit;"><h1 class="print-text">Ежедневный Пророк</h1></a>
+                <svg class="hand-svg right-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
+            </div>
+            <div class="subtitle">«Мы знаем всё, что происходит в магическом мире»</div>
+            <div class="top-nav-wrapper"><div class="top-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div></div>
+        </header>
+        <div style="max-width: 900px; margin: 20px auto; width: 100%;">
+            <div class="headline-wrapper" style="text-align: center; margin-bottom: 20px;">
+                <h2 class="print-text" style="font-size: 3.5rem;">Сириус Блэк замечен в Косом переулке</h2>
+            </div>
+            <div class="article-text" style="column-count: 1;">
+                <img src="https://media1.tenor.com/m/CGAp3hITEyUAAAAC/harry-potter-sirius-black.gif" alt="Сириус Блэк" class="static-img">
+                <p class="first-para">Очевидцы сообщают: беглец рассматривал витрины магазина «Совы и совиные принадлежности». По словам продавца, он долго выбирал перо для письма и не обращал внимания на прохожих.</p>
+                <p>Министерство магии пока не дало официальных комментариев, но источники в Отделе магического правопорядка утверждают, что наблюдение за Косым переулком усилено. Авроры патрулируют улицы, но пока безуспешно.</p>
+                <p>Наш корреспондент попытался поговорить с очевидцами, но большинство из них отказались давать показания, ссылаясь на страх перед возможной местью. Лишь один смельчак заявил, что видел, как Блэк «исчез в переулке, словно растворился в воздухе».</p>
+                <p>Это уже не первое появление беглеца в людных местах за последний месяц. Власти призывают волшебников быть бдительными и сообщать о любых подозрительных личностях в Отдел магического правопорядка.</p>
+                <p>Остается только гадать, какую цель преследует Блэк, разгуливая по Косому переулку. Одно можно сказать точно: скучать нам не придется. Следите за обновлениями в следующем выпуске «Ежедневного Пророка».</p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;"><a href="index.html" style="font-family: 'Playfair Display', serif; font-size: 1.2rem; text-decoration: none; border-bottom: 2px solid #1a1a1a; color: #1a1a1a; padding-bottom: 5px;">← Вернуться на главную</a></div>
+        </div>
+        <footer><div class="footer-info">© 2026 Ежедневный Пророк. Все права защищены.<br>Студент: <strong>Филиппова М.Н.</strong>, группа <strong>233-322</strong>.</div><div class="footer-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div></footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startPrint = (el) => { el.classList.remove('animate-print'); void el.offsetWidth; el.classList.add('animate-print'); };
+            document.querySelectorAll('.print-text').forEach((el, i) => setTimeout(() => startPrint(el), i * 300));
+        });
+    </script>
+</body>
+</html>
