@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <rect width="100" height="100" fill="#f4f1ea"/>
+    <text x="50" y="80" font-family="Georgia, serif" font-size="80" font-weight="bold" fill="#1a1a1a" text-anchor="middle">П</text>
+    <path d="M10,10 Q50,0 90,10 Q50,20 10,10 Z" fill="#8b0000" opacity="0.3"/>
+    <path d="M10,90 Q50,100 90,90 Q50,80 10,90 Z" fill="#8b0000" opacity="0.3"/>
+</svg>

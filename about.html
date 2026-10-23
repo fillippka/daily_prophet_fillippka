@@ -4,57 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О газете | Ежедневный Пророк</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=PT+Serif:ital@0;1&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        .about-container {
-            max-width: 900px;
-            margin: 20px auto;
-            width: 100%;
-        }
-        /* Картинка без увеличения */
-        .static-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-            filter: grayscale(100%);
-            transition: filter 0.4s;
-            cursor: default;
-        }
-        .static-img:hover {
-            filter: grayscale(0%);
-        }
-        /* Кнопка возврата */
+        .static-img { width: 100%; height: auto; display: block; margin-bottom: 20px; filter: grayscale(100%); transition: filter 0.4s; cursor: default; }
+        .static-img:hover { filter: grayscale(0%); }
+        
+        /* Сброс буквиц */
+        .article-text p::first-letter { float: none !important; font-size: inherit !important; line-height: inherit !important; padding: 0 !important; font-family: inherit !important; color: inherit !important; text-shadow: none !important; }
+        /* Буквица только для первого абзаца с классом */
+        .article-text p.first-para::first-letter { float: left !important; font-size: 5rem !important; line-height: 0.8 !important; padding-right: 8px !important; padding-top: 4px !important; font-family: 'UnifrakturMaguntia', 'Playfair Display', serif !important; color: #1a1a1a !important; text-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important; }
+
+        .editor-info { margin-top: 25px; padding-top: 15px; border-top: 1px solid #b0a99a; line-height: 1.8; }
+        .editor-info strong { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        
+        /* Возвращаем кнопку */
         .back-btn {
-            display: inline-block;
-            margin: 20px auto 0;
-            padding: 12px 30px;
-            background-color: #f4f1ea;
-            border: 2px solid #1a1a1a;
-            color: #1a1a1a;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
+            display: inline-block; margin: 20px auto 0; padding: 12px 30px;
+            background-color: #f4f1ea; border: 2px solid #1a1a1a; color: #1a1a1a;
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: bold;
+            text-transform: uppercase; text-decoration: none; cursor: pointer;
+            transition: all 0.3s ease; text-align: center; width: 100%; max-width: 400px;
         }
-        .back-btn:hover {
-            background-color: #1a1a1a;
-            color: #f4f1ea;
-            transform: scale(1.02);
-        }
-        .back-btn-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin-top: 20px;
-        }
+        .back-btn:hover { background-color: #1a1a1a; color: #f4f1ea; transform: scale(1.02); }
+        .back-btn-wrapper { display: flex; justify-content: center; width: 100%; margin-top: 30px; }
     </style>
 </head>
 <body>
@@ -62,74 +36,52 @@
     <div class="newspaper" id="main-newspaper">
         <header>
             <div class="title-container">
-                <svg class="hand-svg left-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" />
-                </svg>
-                <a href="index.html" style="text-decoration: none; color: inherit;">
-                    <h1 class="print-text">Ежедневный Пророк</h1>
-                </a>
-                <svg class="hand-svg right-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" />
-                </svg>
+                <svg class="hand-svg left-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
+                <a href="index.html" style="text-decoration: none; color: inherit;"><h1 class="print-text">Ежедневный Пророк</h1></a>
+                <svg class="hand-svg right-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
             </div>
             <div class="subtitle">«Мы знаем всё, что происходит в магическом мире»</div>
-            <div class="top-nav-wrapper">
-                <div class="top-nav">
-                    <a href="about.html">О газете</a>
-                    <a href="reklama.html">Реклама</a>
-                    <a href="contacts.html">Контакты</a>
-                    <a href="archive.html">Архив выпусков</a>
-                </div>
-            </div>
+            <div class="top-nav-wrapper"><div class="top-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div></div>
         </header>
 
-        <div class="about-container">
+        <div class="about-container" style="max-width: 900px; margin: 20px auto; width: 100%;">
             <div class="headline-wrapper" style="text-align: center; margin-bottom: 20px;">
                 <h2 class="print-text" style="font-size: 3.5rem;">О редакции</h2>
             </div>
-            
             <div class="article-text" style="column-count: 1;">
-                <!-- Картинка без увеличения -->
                 <img src="https://media1.tenor.com/m/8ETGlv3n4UkAAAAd/daily-prophet.gif" alt="Печатный станок" class="static-img">
-                
-                <p><strong>Ежедневный Пророк</strong> — это не просто газета, это голос магического сообщества. Уже более трех веков мы освещаем самые важные и захватывающие события: от заседаний Визенгамота до школьных турниров по квиддичу. Наши корреспонденты работают круглосуточно, чтобы вы первыми узнавали о том, что происходит в мире магии.</p>
-                
+                <p class="first-para"><strong>Ежедневный Пророк</strong> — это не просто газета, это голос магического сообщества. Уже более трех веков мы освещаем самые важные и захватывающие события: от заседаний Визенгамота до школьных турниров по квиддичу. Наши корреспонденты работают круглосуточно, чтобы вы первыми узнавали о том, что происходит в мире магии.</p>
                 <p>Наша редакция расположена в самом сердце Косого переулка, в Лондоне. Здесь кипит жизнь: репортеры приносят свежие новости, редакторы правят статьи, а корректоры вычитывают каждый текст до последней запятой. Мы гордимся тем, что наша газета печатается на самой современной магической бумаге, которая не рвется и не выцветает со временем.</p>
-                
                 <p>За годы существования «Пророк» пережил многое: смену главных редакторов, громкие скандалы и даже попытки цензуры. Но одно оставалось неизменным — наша преданность правде. Мы верим, что каждый волшебник имеет право знать, что происходит в мире, даже если эта правда неудобна.</p>
-                
-                <p><em>Главный редактор:</em> Барнабас Кроуч.<br>
-                <em>Шеф-редактор:</em> Рита Скитер.<br>
-                <em>Корректор:</em> Амброуз Пью.<br>
-                <em>Отдел новостей:</em> совы, которые всегда на связи.</p>
+                <div class="editor-info">
+                    <p><strong>Главный редактор:</strong><i> Барнабас Кроуч</i></p>
+                    <p><strong>Шеф-редактор:</strong><i> Рита Скитер</i></p>
+                    <p><strong>Корректор:</strong><i> Амброуз Пью</i></p>
+                    <p><strong>Отдел новостей:</strong><i> совы, которые всегда на связи</i></p>
+                </div>
             </div>
-
-            <div class="back-btn-wrapper">
-                <a href="index.html" class="back-btn">← Вернуться на главную</a>
-            </div>
+            <div class="back-btn-wrapper"><a href="index.html" class="back-btn">← Вернуться на главную</a></div>
         </div>
-
         <footer>
-            <div class="footer-info">
-                © 2026 Ежедневный Пророк. Все права защищены.<br>
-                Сайт создан в учебных целях. Студент: <strong>Филиппова М.Н.</strong>, группа <strong>233-322</strong>.
-            </div>
-            <div class="footer-nav">
-                <a href="about.html">О газете</a>
-                <a href="reklama.html">Реклама</a>
-                <a href="contacts.html">Контакты</a>
-                <a href="archive.html">Архив выпусков</a>
-            </div>
+            <div class="footer-info">© 2026 Ежедневный Пророк. Все права защищены.<br>Студент: <strong>Филиппова М.Н.</strong>, группа <strong>233-322</strong>.</div>
+            <div class="footer-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div>
+        
+            <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click;DailyProphet"
+            target="_blank"><img id="licntFCB3" width="88" height="31" style="border:0" 
+            title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+            alt=""/></a><script>(function(d,s){d.getElementById("licntFCB3").src=
+            "https://counter.yadro.ru/hit;DailyProphet?t14.6;r"+escape(d.referrer)+
+            ((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+            (s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+            ";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+            (document,screen)</script><!--/LiveInternet-->
+
         </footer>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const startPrint = (el) => {
-                el.classList.remove('animate-print');
-                void el.offsetWidth;
-                el.classList.add('animate-print');
-            };
+            const startPrint = (el) => { el.classList.remove('animate-print'); void el.offsetWidth; el.classList.add('animate-print'); };
             document.querySelectorAll('.print-text').forEach((el, i) => setTimeout(() => startPrint(el), i * 300));
         });
     </script>

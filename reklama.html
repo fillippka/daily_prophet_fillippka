@@ -4,93 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реклама | Ежедневный Пророк</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=PT+Serif:ital@0;1&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Дополнительные стили для страницы рекламы */
-        .ad-page-container {
-            max-width: 900px;
-            margin: 20px auto;
-            width: 100%;
-        }
+        .static-img { width: 100%; height: auto; display: block; margin-bottom: 20px; filter: grayscale(100%); transition: filter 0.4s; cursor: default; }
+        .static-img:hover { filter: grayscale(0%); }
         
-        /* Таблица расценок */
-        .ad-pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.95rem;
-            font-family: 'PT Serif', serif;
-        }
-        .ad-pricing-table th, .ad-pricing-table td {
-            border: 1px solid #1a1a1a;
-            padding: 10px 15px;
-            text-align: left;
-        }
-        .ad-pricing-table th {
-            background-color: #e8e4d9;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .ad-pricing-table tr:nth-child(even) {
-            background-color: #f9f7f2;
-        }
-        .ad-pricing-table td:last-child {
-            font-weight: bold;
-            text-align: right;
-        }
+        .article-text p::first-letter { float: none !important; font-size: inherit !important; line-height: inherit !important; padding: 0 !important; font-family: inherit !important; color: inherit !important; text-shadow: none !important; }
+        .article-text p.first-para::first-letter { float: left !important; font-size: 5rem !important; line-height: 0.8 !important; padding-right: 8px !important; padding-top: 4px !important; font-family: 'UnifrakturMaguntia', 'Playfair Display', serif !important; color: #1a1a1a !important; text-shadow: 2px 2px 0px rgba(0,0,0,0.1) !important; }
 
-        /* Стили для кнопки возврата */
+        .ad-pricing-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; font-family: 'PT Serif', serif; }
+        .ad-pricing-table th, .ad-pricing-table td { border: 1px solid #1a1a1a; padding: 10px 15px; text-align: left; }
+        .ad-pricing-table th { background-color: #e8e4d9; font-family: 'Playfair Display', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .ad-pricing-table tr:nth-child(even) { background-color: #f9f7f2; }
+        .ad-pricing-table td:last-child { font-weight: bold; text-align: right; }
+        .highlight { font-weight: bold; color: #8b0000; }
+
+        .contact-box { border: 2px solid #1a1a1a; padding: 20px; margin: 25px 0; text-align: center; background-color: #f9f7f2; }
+        .contact-box strong { font-family: 'Playfair Display', serif; font-size: 1.3rem; display: block; margin-bottom: 10px; text-transform: uppercase; }
+
         .back-btn {
-            display: inline-block;
-            margin: 20px auto 0;
-            padding: 12px 30px;
-            background-color: #f4f1ea;
-            border: 2px solid #1a1a1a;
-            color: #1a1a1a;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
+            display: inline-block; margin: 20px auto 0; padding: 12px 30px;
+            background-color: #f4f1ea; border: 2px solid #1a1a1a; color: #1a1a1a;
+            font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: bold;
+            text-transform: uppercase; text-decoration: none; cursor: pointer;
+            transition: all 0.3s ease; text-align: center; width: 100%; max-width: 400px;
         }
-        .back-btn:hover {
-            background-color: #1a1a1a;
-            color: #f4f1ea;
-            transform: scale(1.02);
-        }
-        .back-btn-wrapper {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin-top: 20px;
-        }
-        
-        .highlight {
-            font-weight: bold;
-            color: #8b0000;
-        }
-
-        /* Стиль для картинки на этой странице (без увеличения) */
-        .static-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-            filter: grayscale(100%);
-            transition: filter 0.4s;
-            cursor: default; /* Убираем курсор-указатель */
-        }
-        .static-img:hover {
-            filter: grayscale(0%); /* При наведении становится цветной */
-        }
+        .back-btn:hover { background-color: #1a1a1a; color: #f4f1ea; transform: scale(1.02); }
+        .back-btn-wrapper { display: flex; justify-content: center; width: 100%; margin-top: 30px; }
     </style>
 </head>
 <body>
@@ -98,120 +40,65 @@
     <div class="newspaper" id="main-newspaper">
         <header>
             <div class="title-container">
-                <svg class="hand-svg left-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" />
-                </svg>
-                <a href="index.html" style="text-decoration: none; color: inherit;">
-                    <h1 class="print-text">Ежедневный Пророк</h1>
-                </a>
-                <svg class="hand-svg right-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" />
-                </svg>
+                <svg class="hand-svg left-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
+                <a href="index.html" style="text-decoration: none; color: inherit;"><h1 class="print-text">Ежедневный Пророк</h1></a>
+                <svg class="hand-svg right-hand" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,80 C30,80 20,70 20,55 C20,40 30,35 40,40 C45,42 50,50 50,50 C50,50 45,25 55,15 C65,5 75,15 70,30 C65,45 70,50 70,50 C70,50 80,25 90,30 C95,35 90,55 80,65 C70,75 60,80 60,80 Z" /></svg>
             </div>
             <div class="subtitle">«Мы знаем всё, что происходит в магическом мире»</div>
-            <div class="top-nav-wrapper">
-                <div class="top-nav">
-                    <a href="about.html">О газете</a>
-                    <a href="reklama.html">Реклама</a>
-                    <a href="contacts.html">Контакты</a>
-                    <a href="archive.html">Архив выпусков</a>
-                </div>
-            </div>
+            <div class="top-nav-wrapper"><div class="top-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div></div>
         </header>
 
-        <div class="ad-page-container">
+        <div class="ad-page-container" style="max-width: 900px; margin: 20px auto; width: 100%;">
             <div class="headline-wrapper" style="text-align: center; margin-bottom: 20px;">
                 <h2 class="print-text" style="font-size: 3.5rem;">Реклама в «Пророке»</h2>
             </div>
-            
             <div class="article-text" style="column-count: 1;">
-                <!-- Картинка без эффекта увеличения -->
                 <img src="https://media1.tenor.com/m/PqN2OPEVaFMAAAAd/harry-potter.gif" alt="Реклама" class="static-img">
-                
-                <p>Хотите, чтобы о вашем магазине, зелье или услуге узнал весь магический мир? Разместите рекламу в <strong>«Ежедневном Пророке»</strong>! Наша газета читается в каждом уголке Великобритании — от Косого переулка до Хогсмида, от Министерства магии до школьных спален Хогвартса.</p>
-                
+                <p class="first-para">Хотите, чтобы о вашем магазине, зелье или услуге узнал весь магический мир? Разместите рекламу в <strong>«Ежедневном Пророке»</strong>! Наша газета читается в каждом уголке Великобритании — от Косого переулка до Хогсмида, от Министерства магии до школьных спален Хогвартса.</p>
                 <p>Мы предлагаем гибкие условия для бизнеса любого масштаба. Ваше объявление увидят тысячи волшебников ежедневно. Помните: даже самая лучшая метла не продастся, если о ней никто не знает!</p>
-
                 <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin: 30px 0 15px; text-transform: uppercase; border-bottom: 2px solid #1a1a1a; padding-bottom: 5px;">Прайс-лист на размещение</h3>
-                
                 <table class="ad-pricing-table">
-                    <thead>
-                        <tr>
-                            <th>Формат</th>
-                            <th>Описание</th>
-                            <th>Цена (за выпуск)</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>Формат</th><th>Описание</th><th>Цена (за выпуск)</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td>Маленькое объявление</td>
-                            <td>Текст до 20 слов, черно-белая рамка</td>
-                            <td>5 сиклей</td>
-                        </tr>
-                        <tr>
-                            <td>Стандартный блок</td>
-                            <td>Текст + небольшая иллюстрация (до 1/4 полосы)</td>
-                            <td>15 сиклей</td>
-                        </tr>
-                        <tr>
-                            <td>Половина полосы</td>
-                            <td>Крупная реклама с гифкой или фото</td>
-                            <td>40 сиклей</td>
-                        </tr>
-                        <tr>
-                            <td>Целая полоса</td>
-                            <td>Максимальный охват. Ваша реклама на всю страницу!</td>
-                            <td>100 сиклей</td>
-                        </tr>
-                        <tr>
-                            <td><span class="highlight">Спецпредложение</span></td>
-                            <td>Реклама на первой полосе (рядом с главной новостью)</td>
-                            <td><span class="highlight">По запросу</span></td>
-                        </tr>
+                        <tr><td>Маленькое объявление</td><td>Текст до 20 слов, черно-белая рамка</td><td>5 сиклей</td></tr>
+                        <tr><td>Стандартный блок</td><td>Текст + небольшая иллюстрация (до 1/4 полосы)</td><td>15 сиклей</td></tr>
+                        <tr><td>Половина полосы</td><td>Крупная реклама с гифкой или фото</td><td>40 сиклей</td></tr>
+                        <tr><td>Целая полоса</td><td>Максимальный охват. Ваша реклама на всю страницу!</td><td>100 сиклей</td></tr>
+                        <tr><td><span class="highlight">Спецпредложение</span></td><td>Реклама на первой полосе (рядом с главной новостью)</td><td><span class="highlight">По запросу</span></td></tr>
                     </tbody>
                 </table>
-
                 <p>Для постоянных клиентов действуют скидки: при заказе 5 выпусков подряд — <strong>скидка 10%</strong>, при заказе 10 выпусков — <strong>скидка 20%</strong>.</p>
-                
-                <p><em>Свяжитесь с нашим отделом рекламы:</em><br>
-                <strong>Совиная почта:</strong> reklama@dailyprophet.ru<br>
-                <strong>Адрес:</strong> Лондон, Косой переулок, дом 12 (напротив «Сов и совиных принадлежностей»).<br>
-                <strong>Телефон:</strong> +7 (999) 000-00-00 (только в будние дни).</p>
-                
-                <p style="font-style: italic; font-size: 0.9rem; margin-top: 20px; border-top: 1px solid #b0a99a; padding-top: 10px;">Редакция «Ежедневного Пророка» не несёт ответственности за качество рекламируемых товаров и услуг. Все сделки совершаются на ваш страх и риск. Остерегайтесь подделок!</p>
+                <div class="contact-box">
+                    <strong>Свяжитесь с нашим отделом рекламы:</strong>
+                    <p style="margin: 5px 0;"><strong>Совиная почта:</strong> reklama@dailyprophet.ru</p>
+                    <p style="margin: 5px 0;"><strong>Адрес:</strong> Лондон, Косой переулок, дом 12</p>
+                    <p style="margin: 5px 0;"><strong>Телефон:</strong> +7 (999) 000-00-00 (только в будние дни)</p>
+                </div>
+                <p style="font-style: italic; font-size: 0.9rem; margin-top: 20px; border-top: 1px solid #b0a99a; padding-top: 10px;">* Редакция «Ежедневного Пророка» не несёт ответственности за качество рекламируемых товаров и услуг. Все сделки совершаются на ваш страх и риск. Остерегайтесь подделок!</p>
             </div>
-
-            <!-- Кнопка возврата на главную -->
-            <div class="back-btn-wrapper">
-                <a href="index.html" class="back-btn">← Вернуться на главную</a>
-            </div>
+            <div class="back-btn-wrapper"><a href="index.html" class="back-btn">← Вернуться на главную</a></div>
         </div>
-
         <footer>
-            <div class="footer-info">
-                © 2026 Ежедневный Пророк. Все права защищены.<br>
-                Сайт создан в учебных целях. Студент: <strong>Филиппова М.Н.</strong>, группа <strong>233-322</strong>.
-            </div>
-            <div class="footer-nav">
-                <a href="about.html">О газете</a>
-                <a href="reklama.html">Реклама</a>
-                <a href="contacts.html">Контакты</a>
-                <a href="archive.html">Архив выпусков</a>
-            </div>
+            <div class="footer-info">© 2026 Ежедневный Пророк. Все права защищены.<br>Студент: <strong>Филиппова М.Н.</strong>, группа <strong>233-322</strong>.</div>
+            <div class="footer-nav"><a href="about.html">О газете</a><a href="reklama.html">Реклама</a><a href="contacts.html">Контакты</a><a href="archive.html">Архив выпусков</a></div>
+        
+        <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click;DailyProphet"
+target="_blank"><img id="licntFCB3" width="88" height="31" style="border:0" 
+title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licntFCB3").src=
+"https://counter.yadro.ru/hit;DailyProphet?t14.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+
         </footer>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Анимация печати
-            const startPrint = (el) => {
-                el.classList.remove('animate-print');
-                void el.offsetWidth;
-                el.classList.add('animate-print');
-            };
+            const startPrint = (el) => { el.classList.remove('animate-print'); void el.offsetWidth; el.classList.add('animate-print'); };
             document.querySelectorAll('.print-text').forEach((el, i) => setTimeout(() => startPrint(el), i * 300));
-
-            // На этой странице нет эффекта увеличения, поэтому мы не ищем .zoom-img-container
         });
     </script>
 </body>
